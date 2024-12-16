@@ -1,0 +1,450 @@
+[
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "importPath": "glob",
+        "description": "glob",
+        "isExtraImport": true,
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "importPath": "glob",
+        "description": "glob",
+        "isExtraImport": true,
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "OrderedDict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "tbb",
+        "description": "tbb",
+        "isExtraImport": true,
+        "detail": "tbb",
+        "documentation": {}
+    },
+    {
+        "label": "__all__",
+        "importPath": "tbb",
+        "description": "tbb",
+        "isExtraImport": true,
+        "detail": "tbb",
+        "documentation": {}
+    },
+    {
+        "label": "__doc__",
+        "importPath": "tbb",
+        "description": "tbb",
+        "isExtraImport": true,
+        "detail": "tbb",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "distutils.core",
+        "description": "distutils.core",
+        "isExtraImport": true,
+        "detail": "distutils.core",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "distutils.command.build",
+        "description": "distutils.command.build",
+        "isExtraImport": true,
+        "detail": "distutils.command.build",
+        "documentation": {}
+    },
+    {
+        "label": "custom_cp",
+        "kind": 2,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "def custom_cp(src, dst):\n     assert os.system(' '.join([args.copy_tool, src, dst])) == 0\nif args.copy_tool:\n    install_cp = custom_cp # e.g. to use install -p -D -m 755 on Linux\nelse:\n    install_cp = shutil.copy\nbin_dir   = jp(args.prefix, \"bin\")\nlib_dir   = jp(args.prefix, \"lib\")\ninc_dir   = jp(args.prefix, 'include')\ndoc_dir   = jp(args.prefix, 'share', 'doc', 'tbb')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "system",
+        "kind": 2,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "def system(arg):\n    print('$ ', arg)\n    return os.system(arg)\ndef run_make(arg):\n    if system('%s -j %s'% (args.make_tool, arg)) != 0:\n       print(\"\\nBummer. Running serial build in order to recover the log and have a chance to fix the build\")\n       assert system('%s %s'% (args.make_tool, arg)) == 0\nos.chdir(args.tbbroot)\nif args.prebuilt:\n    release_dirs = sum([glob(d) for d in args.prebuilt], [])",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "run_make",
+        "kind": 2,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "def run_make(arg):\n    if system('%s -j %s'% (args.make_tool, arg)) != 0:\n       print(\"\\nBummer. Running serial build in order to recover the log and have a chance to fix the build\")\n       assert system('%s %s'% (args.make_tool, arg)) == 0\nos.chdir(args.tbbroot)\nif args.prebuilt:\n    release_dirs = sum([glob(d) for d in args.prebuilt], [])\n    print(\"Using pre-built files from \", release_dirs)\nelse:\n    if is_win and args.msbuild:",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "append_files",
+        "kind": 2,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "def append_files(names, dst, paths=release_dirs):\n    global filemap\n    files = sum([glob(jp(d, f)) for d in paths for f in names], [])\n    filemap.update(dict(zip(files, [dst]*len(files))))\nif args.install_libs:\n    append_files([libpref+f+libext for f in tbb_names], dll_dir)\nif args.install_devel:\n    dll_files = [libpref+f+'_debug'+libext for f in tbb_names]          # adding debug libraries\n    if not is_win or not args.msbuild:\n        dll_files += [libpref+\"tbb_preview\"+libext, libpref+\"tbb_preview_debug\"+libext]",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "jp",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "jp = os.path.join\nis_win = (platform.system() == 'Windows')\nis_lin = (platform.system() == 'Linux')\nis_mac = (platform.system() == 'Darwin')\ndefault_prefix = os.getenv('PREFIX', 'install_prefix')\nif is_win:\n    default_prefix = jp(default_prefix, 'Library') # conda-specific by default on Windows\nparser = argparse.ArgumentParser()\nparser.add_argument('--tbbroot',        default='.', help='Take Intel TBB from here')\nparser.add_argument('--prefix',         default=default_prefix, help='Prefix')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "is_win",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "is_win = (platform.system() == 'Windows')\nis_lin = (platform.system() == 'Linux')\nis_mac = (platform.system() == 'Darwin')\ndefault_prefix = os.getenv('PREFIX', 'install_prefix')\nif is_win:\n    default_prefix = jp(default_prefix, 'Library') # conda-specific by default on Windows\nparser = argparse.ArgumentParser()\nparser.add_argument('--tbbroot',        default='.', help='Take Intel TBB from here')\nparser.add_argument('--prefix',         default=default_prefix, help='Prefix')\nparser.add_argument('--prebuilt',       default=[],    action='append', help='Directories to find prebuilt files')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "is_lin",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "is_lin = (platform.system() == 'Linux')\nis_mac = (platform.system() == 'Darwin')\ndefault_prefix = os.getenv('PREFIX', 'install_prefix')\nif is_win:\n    default_prefix = jp(default_prefix, 'Library') # conda-specific by default on Windows\nparser = argparse.ArgumentParser()\nparser.add_argument('--tbbroot',        default='.', help='Take Intel TBB from here')\nparser.add_argument('--prefix',         default=default_prefix, help='Prefix')\nparser.add_argument('--prebuilt',       default=[],    action='append', help='Directories to find prebuilt files')\nparser.add_argument('--no-rebuild',     default=False, action='store_true', help='do not rebuild')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "is_mac",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "is_mac = (platform.system() == 'Darwin')\ndefault_prefix = os.getenv('PREFIX', 'install_prefix')\nif is_win:\n    default_prefix = jp(default_prefix, 'Library') # conda-specific by default on Windows\nparser = argparse.ArgumentParser()\nparser.add_argument('--tbbroot',        default='.', help='Take Intel TBB from here')\nparser.add_argument('--prefix',         default=default_prefix, help='Prefix')\nparser.add_argument('--prebuilt',       default=[],    action='append', help='Directories to find prebuilt files')\nparser.add_argument('--no-rebuild',     default=False, action='store_true', help='do not rebuild')\nparser.add_argument('--install',        default=False, action='store_true', help='install all')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "default_prefix",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "default_prefix = os.getenv('PREFIX', 'install_prefix')\nif is_win:\n    default_prefix = jp(default_prefix, 'Library') # conda-specific by default on Windows\nparser = argparse.ArgumentParser()\nparser.add_argument('--tbbroot',        default='.', help='Take Intel TBB from here')\nparser.add_argument('--prefix',         default=default_prefix, help='Prefix')\nparser.add_argument('--prebuilt',       default=[],    action='append', help='Directories to find prebuilt files')\nparser.add_argument('--no-rebuild',     default=False, action='store_true', help='do not rebuild')\nparser.add_argument('--install',        default=False, action='store_true', help='install all')\nparser.add_argument('--install-libs',   default=False, action='store_true', help='install libs')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "parser = argparse.ArgumentParser()\nparser.add_argument('--tbbroot',        default='.', help='Take Intel TBB from here')\nparser.add_argument('--prefix',         default=default_prefix, help='Prefix')\nparser.add_argument('--prebuilt',       default=[],    action='append', help='Directories to find prebuilt files')\nparser.add_argument('--no-rebuild',     default=False, action='store_true', help='do not rebuild')\nparser.add_argument('--install',        default=False, action='store_true', help='install all')\nparser.add_argument('--install-libs',   default=False, action='store_true', help='install libs')\nparser.add_argument('--install-devel',  default=False, action='store_true', help='install devel')\nparser.add_argument('--install-docs',   default=False, action='store_true', help='install docs')\nparser.add_argument('--install-python', default=False, action='store_true', help='install python module')",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "args = parser.parse_args()\nif args.install:\n    args.install_libs  = True\n    args.install_devel = True\n    args.install_docs  = True\n    args.install_python= True\ndef custom_cp(src, dst):\n     assert os.system(' '.join([args.copy_tool, src, dst])) == 0\nif args.copy_tool:\n    install_cp = custom_cp # e.g. to use install -p -D -m 755 on Linux",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "cmake_dir",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "cmake_dir = jp(args.prefix, \"lib\", \"cmake\", \"tbb\") if args.cmake_dir is None else args.cmake_dir\nif is_win:\n    os.environ[\"OS\"] = \"Windows_NT\" # make sure TBB will interpret it correctly\n    libext = '.dll'\n    libpref = ''\n    dll_dir = bin_dir\nelse:\n    libext = '.dylib' if is_mac else '.so.2'\n    libpref = 'lib'\n    dll_dir = lib_dir",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "tbb_names",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "tbb_names = [\"tbb\", \"tbbmalloc\", \"tbbmalloc_proxy\"]\n##############################################################\ndef system(arg):\n    print('$ ', arg)\n    return os.system(arg)\ndef run_make(arg):\n    if system('%s -j %s'% (args.make_tool, arg)) != 0:\n       print(\"\\nBummer. Running serial build in order to recover the log and have a chance to fix the build\")\n       assert system('%s %s'% (args.make_tool, arg)) == 0\nos.chdir(args.tbbroot)",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "filemap",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.build.build",
+        "description": "libs.tbb-2020.1.build.build",
+        "peekOfCode": "filemap = OrderedDict()\ndef append_files(names, dst, paths=release_dirs):\n    global filemap\n    files = sum([glob(jp(d, f)) for d in paths for f in names], [])\n    filemap.update(dict(zip(files, [dst]*len(files))))\nif args.install_libs:\n    append_files([libpref+f+libext for f in tbb_names], dll_dir)\nif args.install_devel:\n    dll_files = [libpref+f+'_debug'+libext for f in tbb_names]          # adding debug libraries\n    if not is_win or not args.msbuild:",
+        "detail": "libs.tbb-2020.1.build.build",
+        "documentation": {}
+    },
+    {
+        "label": "TimeoutError",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class TimeoutError(Exception):\n    \"\"\"Raised when a result is not available within the given timeout\"\"\"\n    pass\nclass Pool(object):\n    \"\"\"\n    The Pool class provides standard multiprocessing.Pool interface\n    which is mapped onto Intel(R) TBB tasks executing in its thread pool\n    \"\"\"\n    def __init__(self, nworkers=0, name=\"Pool\"):\n        \"\"\"",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "Pool",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class Pool(object):\n    \"\"\"\n    The Pool class provides standard multiprocessing.Pool interface\n    which is mapped onto Intel(R) TBB tasks executing in its thread pool\n    \"\"\"\n    def __init__(self, nworkers=0, name=\"Pool\"):\n        \"\"\"\n        \\param nworkers (integer) number of worker threads to start\n        \\param name (string) prefix for the worker threads' name\n        \"\"\"",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class Job:\n    \"\"\"A work unit that corresponds to the execution of a single function\"\"\"\n    def __init__(self, func, args, kwds, apply_result):\n        \"\"\"\n        \\param func/args/kwds used to call the function\n        \\param apply_result ApplyResult object that holds the result\n        of the function call\n        \"\"\"\n        self._func = func\n        self._args = args",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "JobSequence",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class JobSequence:\n    \"\"\"A work unit that corresponds to the processing of a continuous\n    sequence of Job objects\"\"\"\n    def __init__(self, jobs):\n        self._jobs = jobs\n    def __call__(self):\n        \"\"\"\n        Call all the Job objects that have been specified\n        \"\"\"\n        for job in self._jobs:",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "ApplyResult",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class ApplyResult(object):\n    \"\"\"An object associated with a Job object that holds its result:\n    it's available during the whole life the Job and after, even when\n    the Job didn't process yet. It's possible to use this object to\n    wait for the result/exception of the job to be available.\n    The result objects returns by the Pool::*_async() methods are of\n    this type\"\"\"\n    def __init__(self, collector=None, callback=None):\n        \"\"\"\n        \\param collector when not None, the notify_ready() method of",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractResultCollector",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class AbstractResultCollector(object):\n    \"\"\"ABC to define the interface of a ResultCollector object. It is\n    basically an object which knows whuich results it's waiting for,\n    and which is able to get notify when they get available. It is\n    also able to provide an iterator over the results when they are\n    available\"\"\"\n    def __init__(self, to_notify):\n        \"\"\"\n        \\param to_notify ApplyResult object to notify when all the\n        results we're waiting for become available. Can be None.",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "CollectorIterator",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class CollectorIterator(object):\n    \"\"\"An iterator that allows to iterate over the result values\n    available in the given collector object. Equipped with an extended\n    next() method accepting a timeout argument. Created by the\n    AbstractResultCollector::__iter__() method\"\"\"\n    def __init__(self, collector):\n        \"\"\"\\param AbstractResultCollector instance\"\"\"\n        self._collector = collector\n        self._idx = 0\n    def __iter__(self):",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "UnorderedResultCollector",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class UnorderedResultCollector(AbstractResultCollector):\n    \"\"\"An AbstractResultCollector implementation that collects the\n    values of the ApplyResult objects in the order they become ready. The\n    CollectorIterator object returned by __iter__() will iterate over\n    them in the order they become ready\"\"\"\n    def __init__(self, to_notify=None):\n        \"\"\"\n        \\param to_notify ApplyResult object to notify when all the\n        results we're waiting for become available. Can be None.\n        \"\"\"",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "OrderedResultCollector",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "class OrderedResultCollector(AbstractResultCollector):\n    \"\"\"An AbstractResultCollector implementation that collects the\n    values of the ApplyResult objects in the order they have been\n    submitted. The CollectorIterator object returned by __iter__()\n    will iterate over them in the order they have been submitted\"\"\"\n    def __init__(self, to_notify=None, as_iterator=True):\n        \"\"\"\n        \\param to_notify ApplyResult object to notify when all the\n        results we're waiting for become available. Can be None.\n        \\param as_iterator boolean telling whether the result value",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "__all__",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "__all__ = [\"Pool\", \"TimeoutError\"]\n__doc__ = \"\"\"\nStandard Python Pool implementation based on Python API\nfor Intel(R) Threading Building Blocks library (Intel(R) TBB)\n\"\"\"\nclass TimeoutError(Exception):\n    \"\"\"Raised when a result is not available within the given timeout\"\"\"\n    pass\nclass Pool(object):\n    \"\"\"",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "__doc__",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.python.tbb.pool",
+        "description": "libs.tbb-2020.1.python.tbb.pool",
+        "peekOfCode": "__doc__ = \"\"\"\nStandard Python Pool implementation based on Python API\nfor Intel(R) Threading Building Blocks library (Intel(R) TBB)\n\"\"\"\nclass TimeoutError(Exception):\n    \"\"\"Raised when a result is not available within the given timeout\"\"\"\n    pass\nclass Pool(object):\n    \"\"\"\n    The Pool class provides standard multiprocessing.Pool interface",
+        "detail": "libs.tbb-2020.1.python.tbb.pool",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "libs.tbb-2020.1.python.tbb.test",
+        "description": "libs.tbb-2020.1.python.tbb.test",
+        "peekOfCode": "def test(arg=None):\n    if arg == \"-v\":\n        def say(*x):\n            print(*x)\n    else:\n        def say(*x):\n            pass\n    say(\"Start Pool testing\")\n    get_tid = lambda: threading.current_thread().ident\n    def return42():",
+        "detail": "libs.tbb-2020.1.python.tbb.test",
+        "documentation": {}
+    },
+    {
+        "label": "TBBBuild",
+        "kind": 6,
+        "importPath": "libs.tbb-2020.1.python.setup",
+        "description": "libs.tbb-2020.1.python.setup",
+        "peekOfCode": "class TBBBuild(build):\n    sub_commands = [  # define build order\n        ('build_ext', build.has_ext_modules),\n        ('build_py', build.has_pure_modules),\n    ]\nsetup(  name        =\"TBB\",\n        description =\"Python API for Intel TBB\",\n        long_description=\"Python API to Intel(R) Threading Building Blocks library (Intel(R) TBB) \"\n                         \"extended with standard Pool implementation and monkey-patching\",\n        url         =\"https://software.intel.com/en-us/intel-tbb\",",
+        "detail": "libs.tbb-2020.1.python.setup",
+        "documentation": {}
+    },
+    {
+        "label": "rundir",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.python.setup",
+        "description": "libs.tbb-2020.1.python.setup",
+        "peekOfCode": "rundir = os.getcwd()\nos.chdir(os.path.abspath(os.path.dirname(__file__)))\nif any(i in os.environ for i in [\"CC\", \"CXX\"]):\n    if \"CC\" not in os.environ:\n        os.environ['CC'] = os.environ['CXX']\n    if \"CXX\" not in os.environ:\n        os.environ['CXX'] = os.environ['CC']\n    if platform.system() == 'Linux':\n        os.environ['LDSHARED'] = os.environ['CXX'] + \" -shared\"\n    print(\"Environment specifies CC=%s CXX=%s\"%(os.environ['CC'], os.environ['CXX']))",
+        "detail": "libs.tbb-2020.1.python.setup",
+        "documentation": {}
+    },
+    {
+        "label": "intel_compiler",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.python.setup",
+        "description": "libs.tbb-2020.1.python.setup",
+        "peekOfCode": "intel_compiler = os.getenv('CC', '') in ['icl', 'icpc', 'icc']\ntry:\n    tbb_root = os.environ['TBBROOT']\n    print(\"Using TBBROOT=\", tbb_root)\nexcept:\n    tbb_root = '..'\n    if not intel_compiler:\n        print(\"Warning: TBBROOT env var is not set and Intel's compiler is not used. It might lead\\n\"\n              \"    !!!: to compile/link problems. Source tbbvars.sh/.csh file to set environment\")\nuse_compiler_tbb = intel_compiler and tbb_root == '..'",
+        "detail": "libs.tbb-2020.1.python.setup",
+        "documentation": {}
+    },
+    {
+        "label": "use_compiler_tbb",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.python.setup",
+        "description": "libs.tbb-2020.1.python.setup",
+        "peekOfCode": "use_compiler_tbb = intel_compiler and tbb_root == '..'\nif use_compiler_tbb:\n    print(\"Using Intel TBB from Intel's compiler\")\nif platform.system() == 'Windows':\n    if intel_compiler:\n        os.environ['DISTUTILS_USE_SDK'] = '1'  # Enable environment settings in distutils\n        os.environ['MSSdk'] = '1'\n        print(\"Using compiler settings from environment\")\n    tbb_flag = ['/Qtbb'] if use_compiler_tbb else []\n    tbb_flag += ['/EHsc'] # for Python 2",
+        "detail": "libs.tbb-2020.1.python.setup",
+        "documentation": {}
+    },
+    {
+        "label": "_tbb",
+        "kind": 5,
+        "importPath": "libs.tbb-2020.1.python.setup",
+        "description": "libs.tbb-2020.1.python.setup",
+        "peekOfCode": "_tbb = Extension(\"tbb._api\", [\"tbb/api.i\"],\n        include_dirs=[os.path.join(tbb_root, 'include')] if not use_compiler_tbb else [],\n        swig_opts   =['-c++', '-O', '-threads'] + (  # add '-builtin' later\n              ['-I' + os.path.join(tbb_root, 'include')] if not use_compiler_tbb else []),\n        extra_compile_args=compile_flags + tbb_flag,\n        extra_link_args=tbb_flag,\n        libraries   =(['tbb'] if not use_compiler_tbb else []) +\n                     (['irml'] if platform.system() == \"Linux\" else []),   # TODO: why do we need this?\n        library_dirs=[ rundir,                                              # for custom-builds\n                       os.path.join(tbb_root, 'lib', 'intel64', 'gcc4.8'),  # for Linux",
+        "detail": "libs.tbb-2020.1.python.setup",
+        "documentation": {}
+    }
+]
