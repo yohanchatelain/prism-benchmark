@@ -4,9 +4,9 @@
 #include <assert.h>
 #include <math.h>
 #include <stdint.h>
-#include <stdlib.h>
-
 #include <stdio.h>
+#include <stdlib.h>
+#include <type_traits>
 
 namespace Double {
 
@@ -160,6 +160,13 @@ template <typename T> static inline T SIGN(T x) {
     return Double::SIGN(x);
   else
     return Float::SIGN(x);
+}
+
+template <typename T, typename T> static inline I get_exponent(T x) {
+  if (std::is_same<T, Double::FPTYPE>::value)
+    return Double::get_exponent(x);
+  else
+    return Float::get_exponent(x);
 }
 
 /************************

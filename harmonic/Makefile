@@ -4,11 +4,11 @@ LIB=-L${VIRTUAL_ENV}/lib
 FLAGS_OPT=-O3 -march=native
 FLAGS_DEBUG=-Og
 
-PRSIM_SR_DEBUG_FLAGS="--online-instrumentation=sr --online-instrumentation-dispatch=dynamic --verbose"
-PRSIM_SR_PERF_FLAGS="--online-instrumentation=sr --online-instrumentation-dispatch=static --verbose"
+PRSIM_SR_DEBUG_FLAGS="--prism-backend=sr --prism-backend-dispatch=dynamic --verbose"
+PRSIM_SR_PERF_FLAGS="--prism-backend=sr --prism-backend-dispatch=static --verbose"
 
-PRISM_UD_DEBUG_FLAGS="--online-instrumentation=up-down --online-instrumentation-dispatch=dynamic --verbose"
-PRISM_UD_PERF_FLAGS="--online-instrumentation=up-down --online-instrumentation-dispatch=dynamic --verbose"
+PRISM_UD_DEBUG_FLAGS="--prism-backend=up-down --prism-backend-dispatch=dynamic --verbose"
+PRISM_UD_PERF_FLAGS="--prism-backend=up-down --prism-backend-dispatch=dynamic --verbose"
 
 SRC=src/harmonic.c
 CADNA_SRC=src/harmonic_cadna.c
@@ -29,8 +29,8 @@ cadna:
 	$(CXX) $(CADNA_SRC) -lcadnaC ${FLAGS_OPT} -o harmonic_cadna-perf -I${VIRTUAL_ENV}/include -L${VIRTUAL_ENV}/lib
 
 sr:
-	$(CXX) $(SR_SRC) -std=c++20 -lsr -lm ${FLAGS_DEBUG} -o harmonic_sr-dbg -I${VIRTUAL_ENV}/include -L${VIRTUAL_ENV}/lib
-	$(CXX) $(SR_SRC) -std=c++20 -lsr -lm ${FLAGS_OPT} -o harmonic_sr-perf -I${VIRTUAL_ENV}/include -L${VIRTUAL_ENV}/lib
+	$(CXX) $(SR_SRC) -lsr -lm ${FLAGS_DEBUG} -o harmonic_sr-dbg -I${VIRTUAL_ENV}/include -L${VIRTUAL_ENV}/lib
+	$(CXX) $(SR_SRC) -lsr -lm ${FLAGS_OPT} -o harmonic_sr-perf -I${VIRTUAL_ENV}/include -L${VIRTUAL_ENV}/lib
 
 verificarlo:
 	verificarlo-c $(SRC) ${FLAGS_DEBUG} -o harmonic_verificarlo-dbg -I${VIRTUAL_ENV}/include -L${VIRTUAL_ENV}/lib

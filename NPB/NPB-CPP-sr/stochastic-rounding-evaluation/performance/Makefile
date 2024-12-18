@@ -29,7 +29,7 @@ stochrnddw_ar.o: stochrnddw_ar.cpp stochrnddw.hpp
 stochrnddw_rn.o: stochrnddw_rn.cpp stochrnddw.hpp
 	$(CC) $(CFLAGS_HO) -I$(CMAKE_INCLUDE) -c -o $@ $<
 
-stochrndhp.o: stochrndhp.c stochrndhp.h
+stochrndhp.o: stochrndhp.cpp stochrndhp.h
 	$(CC) $(CFLAGS_HO) -I$(CMAKE_INCLUDE) -c -o $@ $<
 
 test_%.o: test_%.c $(DEPS)
