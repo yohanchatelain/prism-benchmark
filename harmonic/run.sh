@@ -58,7 +58,13 @@ function run {
 
     debug "Launching ${TOOL} ${MODE} ${ITERATIONS} ..."
 
-    for i in {1..3}; do
+    if [ "$TOOL" == "cadna" ]; then
+        REP=1
+    else
+        REP=3
+    fi
+
+    for i in $(seq $REP); do
         run_${TOOL} ${MODE} ${ITERATIONS} >>.result/${TOOL}-${MODE}-${ITERATIONS}.txt
     done
 }

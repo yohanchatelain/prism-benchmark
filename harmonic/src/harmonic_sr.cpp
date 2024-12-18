@@ -1,4 +1,5 @@
 #include <ctime>
+#include <random>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +16,8 @@ float harmonic_series(int n) {
 int main(int argc, char *argv[]) {
 
   // init random number generator
-  srand(time(NULL));
+  std::random_device rd;
+  srand(rd());
 
   if (argc != 2) {
     printf("Usage: %s <number_of_terms>\n", argv[0]);

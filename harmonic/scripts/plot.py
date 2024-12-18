@@ -138,10 +138,10 @@ def plot(df, std):
 
     color_map = {
         "PRISM": px.colors.qualitative.Plotly[0],  # blue
-        "VERROU": px.colors.qualitative.Plotly[9],  # red
+        "VERROU": px.colors.qualitative.Plotly[4],  # red
         "CADNA": px.colors.qualitative.Plotly[2],  # green
         "IEEE": px.colors.qualitative.Plotly[3],  # yellow
-        "IEEE": px.colors.qualitative.Plotly[4],  # purple
+        "IEEE": px.colors.qualitative.Plotly[8],  # purple
         "SR": px.colors.qualitative.Plotly[5],  # purple
         "MCA": px.colors.qualitative.Plotly[1],  #
     }
